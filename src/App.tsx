@@ -16,10 +16,10 @@ const App: React.FC = () => {
   }
 
   function handleOrientation(event: DeviceOrientationEvent) {
-    let x = event.beta;  // In degree in the range [-180,180]
-    let y = event.gamma; // In degree in the range [-90,90]
+    let x = event.beta || 0;  // In degree in the range [-180,180]
+    let y = event.gamma || 0; // In degree in the range [-90,90]
     setOrientation([x, y]);
-    socket.emit('deviceOrientationChanged', { x: x, y: 0 });
+    socket.emit('deviceOrientationChanged', { x: ( x / 5 ), y: 0 });
   }
   useEffect(() => {
     window.addEventListener('deviceorientation', handleOrientation);
