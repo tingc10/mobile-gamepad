@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mobile-gamepad/precache-manifest.81c611cf0fb9a43a27b5430ebc445a48.js"
+  "/mobile-gamepad/precache-manifest.f404bdc7de29d6dc07cb87ee5b195575.js"
 );
 
 self.addEventListener('message', (event) => {
