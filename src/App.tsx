@@ -7,7 +7,8 @@ let keydownValue = 0;
 
 const App: React.FC = () => {
   let isLandscape = true;
-  const [orientation, setOrientation] = useState();
+  const [, setOrientation] = useState();
+  const [showRestartButton, setShowRestartButton] = useState(false);
   const [status, setStatus] = useState('Please enter the playerId to pair controller');
   const [activeInputs, setActiveInputs] = useState<Set<string>>(new Set());
   const [playerId, setPlayerId] = useState('');
@@ -19,7 +20,7 @@ const App: React.FC = () => {
     let x = event.beta || 0;  // In degree in the range [-180,180]
     let y = event.gamma || 0; // In degree in the range [-90,90]
     setOrientation([x, y]);
-    socket.emit('deviceOrientationChanged', { x: ( x / 5 ), y: 0 });
+    socket.emit('deviceOrientationChanged', { x: ( x / 20 ), y: 0 });
   }
   useEffect(() => {
     window.addEventListener('deviceorientation', handleOrientation);
@@ -64,6 +65,14 @@ const App: React.FC = () => {
     socket.on('controllerPairSuccess', (data: { message: string }) => {
       setStatus('Controller Connected');
     });
+
+    socket.on('restartGame', () => {
+      setShowRestartButton(false);
+    });
+
+    socket.on('gameOver', () => {
+      setShowRestartButton(true);
+    });
   }, []);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -75,6 +84,18 @@ const App: React.FC = () => {
     setPlayerId(e.target.value);
   }
 
+  function handleRestartClick() {
+    setShowRestartButton(false);
+    socket.emit('restartGame');
+  }
+
+  function renderRestartButton() {
+    if (showRestartButton) {
+      return <div><button onClick={handleRestartClick}>Restart Game</button></div>;
+    }
+    return null;
+  }
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -83,6 +104,7 @@ const App: React.FC = () => {
       </form>
       { status }
       { !isLandscape && <div>Please turn your device!</div>}
+      {renderRestartButton()}
     </div>
   );
 }
