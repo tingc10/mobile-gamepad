@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NoSleep from 'nosleep.js';
 // import {socket} from './utils/socket';
 import './App.css';
 import { socket } from './utils/socket';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
     socket.emit('deviceOrientationChanged', { x: ( x / 20 ), y: 0 });
   }
   useEffect(() => {
+    const noSleep = new NoSleep();
     window.addEventListener('deviceorientation', handleOrientation);
     window.addEventListener('keyup', (e) => {
       if (activeInputs.has('keydown')) {
@@ -73,6 +75,11 @@ const App: React.FC = () => {
     socket.on('gameOver', () => {
       setShowRestartButton(true);
     });
+
+    document.addEventListener('click', function enableNoSleep() {
+      document.removeEventListener('click', enableNoSleep, false);
+      noSleep.enable();
+    }, false);
   }, []);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
