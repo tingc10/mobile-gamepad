@@ -1233,6 +1233,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/bowser@^1.1.1":
+  version "1.1.1"
+  resolved "https://artifactory.global.square/artifactory/api/npm/square-npm/@types/bowser/-/bowser-1.1.1.tgz#9bbe3c93fef1c787f565d252ce51326ada506611"
+  integrity sha1-m748k/7xx4f1ZdJSzlEyatpQZhE=
+  dependencies:
+    bowser "*"
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -2144,6 +2151,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+
+bowser@*, bowser@^2.5.4:
+  version "2.5.4"
+  resolved "https://artifactory.global.square/artifactory/api/npm/square-npm/bowser/-/bowser-2.5.4.tgz#850fccfebde92165440279b5ab19be3c7f05cfe1"
+  integrity sha1-hQ/M/r3pIWVEAnm1qxm+PH8Fz+E=
 
 brace-expansion@^1.1.7:
   version "1.1.11"

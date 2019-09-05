@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import NoSleep from 'nosleep.js';
+import Bowser from 'bowser';
 // import {socket} from './utils/socket';
 import './App.css';
 import { socket } from './utils/socket';
 
 let keydownValue = 0;
+const parser = Bowser.getParser(window.navigator.userAgent);
 
 const App: React.FC = () => {
   let isLandscape = true;
@@ -76,10 +78,21 @@ const App: React.FC = () => {
       setShowRestartButton(true);
     });
 
-    document.addEventListener('click', function enableNoSleep() {
-      document.removeEventListener('click', enableNoSleep, false);
+    document.addEventListener('click', function userTapPermissions() {
+      document.removeEventListener('click', userTapPermissions, false);
+      // This prevents the phone from going to sleep
       noSleep.enable();
     }, false);
+    
+    try {
+      if (DeviceOrientationEvent) {
+        console.log('Device orientation supported!');
+      }
+    } catch(e) {
+      if (parser.getBrowserName().toLowerCase() === 'safari') {
+        setStatus('Your browser does not support motion detection. To enable it on an iOS device, open Settings > Safari > Enable Motion & Orientation Access')      
+      }
+    }
   }, []);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
