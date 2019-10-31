@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b7f2774f8e060b121ae5b96a1713df24",
+    "revision": "599113fa8d6070c0fe4d396cbbbd5d3c",
     "url": "/mobile-gamepad/index.html"
   },
   {
-    "revision": "a8418cd6aa33ac716916",
+    "revision": "532f71e3c2df8c30bd59",
     "url": "/mobile-gamepad/static/css/main.19393e92.chunk.css"
   },
   {
-    "revision": "d3fd1cf3b2dd611a4219",
-    "url": "/mobile-gamepad/static/js/2.ed0cba57.chunk.js"
+    "revision": "1fe8df3b8b5c4d91c044",
+    "url": "/mobile-gamepad/static/js/2.e3774c4d.chunk.js"
   },
   {
-    "revision": "a8418cd6aa33ac716916",
-    "url": "/mobile-gamepad/static/js/main.7a07a8b5.chunk.js"
+    "revision": "532f71e3c2df8c30bd59",
+    "url": "/mobile-gamepad/static/js/main.cc45bb9f.chunk.js"
   },
   {
     "revision": "d13eaf2117e6a8f1058d",
