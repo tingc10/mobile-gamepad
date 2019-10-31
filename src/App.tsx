@@ -9,9 +9,9 @@ const App: React.FC = () => {
   let isLandscape = true;
   const [, setOrientation] = useState();
   const [showRestartButton, setShowRestartButton] = useState(false);
-  const [status, setStatus] = useState('Please enter the playerId to pair controller');
+  const [status, setStatus] = useState('Please enter the clientId to pair controller');
   const [activeInputs, setActiveInputs] = useState<Set<string>>(new Set());
-  const [playerId, setPlayerId] = useState('');
+  const [clientId, setClientId] = useState('');
   if(window.innerHeight > window.innerWidth) {
       isLandscape = false;
   }
@@ -77,11 +77,11 @@ const App: React.FC = () => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    socket.emit('setAssociatedPlayerId', playerId);
+    socket.emit('setAssociatedClientId', clientId);
   }
 
-  function handleChangePlayerId(e: React.ChangeEvent<HTMLInputElement>) {
-    setPlayerId(e.target.value);
+  function handleChangeClientId(e: React.ChangeEvent<HTMLInputElement>) {
+    setClientId(e.target.value);
   }
 
   function handleRestartClick() {
@@ -99,7 +99,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <input name="playerId" onChange={handleChangePlayerId} value={playerId}/>
+        <input name="clientId" onChange={handleChangeClientId} value={clientId}/>
         <input type="submit" value="Set Player Id" />
       </form>
       { status }
