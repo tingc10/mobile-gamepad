@@ -1235,8 +1235,8 @@
 
 "@types/bowser@^1.1.1":
   version "1.1.1"
-  resolved "https://artifactory.global.square/artifactory/api/npm/square-npm/@types/bowser/-/bowser-1.1.1.tgz#9bbe3c93fef1c787f565d252ce51326ada506611"
-  integrity sha1-m748k/7xx4f1ZdJSzlEyatpQZhE=
+  resolved "https://registry.yarnpkg.com/@types/bowser/-/bowser-1.1.1.tgz#9bbe3c93fef1c787f565d252ce51326ada506611"
+  integrity sha512-JEJrXQI6H+wJsj8Q5gmR2u3v+fsI00cmatVKq9EzXk66xGNueUi8MFOnuHo3S9poNnTxrLiEUMFuiLW7JVVN8g==
   dependencies:
     bowser "*"
 
@@ -2153,9 +2153,9 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
 bowser@*, bowser@^2.5.4:
-  version "2.5.4"
-  resolved "https://artifactory.global.square/artifactory/api/npm/square-npm/bowser/-/bowser-2.5.4.tgz#850fccfebde92165440279b5ab19be3c7f05cfe1"
-  integrity sha1-hQ/M/r3pIWVEAnm1qxm+PH8Fz+E=
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.7.0.tgz#96eab1fa07fab08c1ec4c75977a7c8ddf8e0fe1f"
+  integrity sha512-aIlMvstvu8x+34KEiOHD3AsBgdrzg6sxALYiukOWhFvGMbQI6TRP/iY0LMhUrHs56aD6P1G0Z7h45PUJaa5m9w==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -6607,8 +6607,8 @@ normalize-url@^3.0.0:
 
 nosleep.js@^0.9.0:
   version "0.9.0"
-  resolved "https://artifactory.global.square/artifactory/api/npm/square-npm/nosleep.js/-/nosleep.js-0.9.0.tgz#0f1371b81dc182e3b6bbdb837e880f16db9d7163"
-  integrity sha1-DxNxuB3BguO2u9uDfogPFtudcWM=
+  resolved "https://registry.yarnpkg.com/nosleep.js/-/nosleep.js-0.9.0.tgz#0f1371b81dc182e3b6bbdb837e880f16db9d7163"
+  integrity sha512-qLOl2MmuGOPZY7Exi0kYJSCr2e9IcAtOykOo7hXUGAoaMC1Iqj0m+Aj2REuay68mDkhbc5CoA4ccUvcZI175Kw==
 
 npm-bundled@^1.0.1:
   version "1.0.6"
