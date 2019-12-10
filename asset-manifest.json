@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mobile-gamepad/static/css/main.19393e92.chunk.css",
-    "main.js": "/mobile-gamepad/static/js/main.cc45bb9f.chunk.js",
-    "main.js.map": "/mobile-gamepad/static/js/main.cc45bb9f.chunk.js.map",
+    "main.js": "/mobile-gamepad/static/js/main.20d9470a.chunk.js",
+    "main.js.map": "/mobile-gamepad/static/js/main.20d9470a.chunk.js.map",
     "runtime~main.js": "/mobile-gamepad/static/js/runtime~main.696c3d56.js",
     "runtime~main.js.map": "/mobile-gamepad/static/js/runtime~main.696c3d56.js.map",
-    "static/js/2.e3774c4d.chunk.js": "/mobile-gamepad/static/js/2.e3774c4d.chunk.js",
-    "static/js/2.e3774c4d.chunk.js.map": "/mobile-gamepad/static/js/2.e3774c4d.chunk.js.map",
+    "static/js/2.00311361.chunk.js": "/mobile-gamepad/static/js/2.00311361.chunk.js",
+    "static/js/2.00311361.chunk.js.map": "/mobile-gamepad/static/js/2.00311361.chunk.js.map",
     "index.html": "/mobile-gamepad/index.html",
-    "precache-manifest.48644acf8802461ac7dcdb1bef3b5e34.js": "/mobile-gamepad/precache-manifest.48644acf8802461ac7dcdb1bef3b5e34.js",
+    "precache-manifest.cc724b093d0d0e9d22dacba46bcf4cee.js": "/mobile-gamepad/precache-manifest.cc724b093d0d0e9d22dacba46bcf4cee.js",
     "service-worker.js": "/mobile-gamepad/service-worker.js",
     "static/css/main.19393e92.chunk.css.map": "/mobile-gamepad/static/css/main.19393e92.chunk.css.map"
   }
