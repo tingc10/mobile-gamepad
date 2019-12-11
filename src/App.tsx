@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NoSleep from "nosleep.js";
 import Bowser from "bowser";
 import "./App.css";
@@ -31,7 +31,6 @@ const RestartIcon = () => {
 
 const App: React.FC = () => {
   let isLandscape = true;
-  const [, setOrientation] = useState();
   const [showRestartButton, setShowRestartButton] = useState(false);
   const [status, setStatus] = useState(
     "Please enter the clientId to pair controller"
@@ -42,7 +41,7 @@ const App: React.FC = () => {
     deviceOrientationInitialized,
     setDeviceOrientationInitialized
   ] = useState(false);
-  const [playerNumber, setPlayerNumber] = useState(1);
+  const playerRef = useRef(1);
   if (window.innerHeight > window.innerWidth) {
     isLandscape = false;
   }
@@ -50,13 +49,12 @@ const App: React.FC = () => {
   function handleOrientation(event: DeviceOrientationEvent) {
     let x = event.beta || 0; // In degree in the range [-180,180]
     let y = event.gamma || 0; // In degree in the range [-90,90]
-    if (playerNumber === 2) {
-      x = -x;
-      y = -y;
+    if (playerRef.current === 2) {
+      x = -1 * x;
     }
-    setOrientation([x, y]);
     socket.emit("deviceOrientationChanged", { x: x / 20, y: 0 });
   }
+
   useEffect(() => {
     const noSleep = new NoSleep();
     window.addEventListener("keyup", e => {
@@ -97,7 +95,7 @@ const App: React.FC = () => {
     });
 
     socket.on("controllerPairSuccess", (data: { playerNumber: number }) => {
-      setPlayerNumber(data.playerNumber);
+      playerRef.current = data.playerNumber;
       setStatus("Controller Connected");
     });
 
